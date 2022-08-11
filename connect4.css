@@ -1,0 +1,136 @@
+/* game board table */
+body {
+  background-color: rgb(34, 46, 46);
+}
+button {
+  background-color: rgb(9, 173, 22);
+  height: 30px;
+  color: white;
+}
+#board {
+  margin: auto;
+}
+#board td {
+  width: 50px;
+  height: 50px;
+  border: solid 12px rgb(42, 39, 184);
+  /* testing */
+  position: relative;
+}
+#pannel {
+  /* width: 545px; */
+  width: 520px;
+  min-height: 70px;
+  /* background-color: rgb(42, 39, 184); */
+  /* border: solid 12px rgb(42, 39, 184); */
+  border-left: solid 12px rgb(42, 39, 184);
+  border-right: solid 12px rgb(42, 39, 184);
+  /* border-bottom: solid 12px rgb(42, 39, 184); */
+  text-align: center;
+  margin: auto;
+}
+.roundDiv {
+  border: solid 12px rgb(42, 39, 184);
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  left: -11px;
+}
+#column-top td {
+  padding: 7px;
+}
+/* pieces are div within game table cells: draw as colored circles */
+h1 {
+  text-align: center;
+  color: white;
+}
+.piece {
+  /* TODO: make into circles */
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  /* testing */
+  z-index: -1;
+  left: 2px;
+  bottom: 0px;
+}
+.drop {
+  animation: drop 0.5s ease forwards;
+}
+@keyframes drop {
+  0% {
+    transform: translateY(-500px);
+  }
+  60% {
+    transform: translateY(0px);
+  }
+  70% {
+    transform: translateY(-50px);
+  }
+  80% {
+    transform: translateY(0px);
+  }
+  90% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.reset {
+  animation: reset 0.5s ease forwards;
+  /* bottom: -100px */
+}
+@keyframes reset {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    /* transform: translateY(50px); */
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100px);
+    /* transform: rotateX(70deg); */
+  }
+}
+/* TODO: make pieces red/blue,  depending on player 1/2 piece */
+.player1 {
+  background-color: red;
+  position: absolute;
+  border: solid 5px rgb(189, 8, 8);
+}
+.player2 {
+  background-color: gold;
+  position: absolute;
+  border: solid 5px rgb(184, 157, 5);
+}
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border: dashed 1px lightgray;
+}
+
+#column-top td:hover {
+  cursor: pointer;
+}
+
+.spin {
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}

@@ -1,11 +1,12 @@
 /* game board table */
 body {
-  background-color: rgb(34, 46, 46);
+  background-color: rgb(17, 22, 22);
 }
 button {
   background-color: rgb(9, 173, 22);
-  height: 30px;
+  height: 40px;
   color: white;
+  font-size: large;
 }
 #board {
   margin: auto;
@@ -13,30 +14,23 @@ button {
 #board td {
   width: 50px;
   height: 50px;
-  border: solid 12px rgb(42, 39, 184);
-  /* testing */
   position: relative;
 }
 #pannel {
-  /* width: 545px; */
-  width: 520px;
+  width: 515px;
   min-height: 70px;
-  /* background-color: rgb(42, 39, 184); */
-  /* border: solid 12px rgb(42, 39, 184); */
-  border-left: solid 12px rgb(42, 39, 184);
-  border-right: solid 12px rgb(42, 39, 184);
-  /* border-bottom: solid 12px rgb(42, 39, 184); */
+  border-left: solid 12px #1e1392;
+  border-right: solid 12px #1e1392;
   text-align: center;
   margin: auto;
 }
 .roundDiv {
-  border: solid 12px rgb(42, 39, 184);
   border-radius: 50%;
   width: 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
-  left: -11px;
+  left: -12px;
 }
 #column-top td {
   padding: 7px;
@@ -44,7 +38,9 @@ button {
 /* pieces are div within game table cells: draw as colored circles */
 h1 {
   text-align: center;
+  font-size: 60px;
   color: white;
+  font-family: sans-serif
 }
 .piece {
   /* TODO: make into circles */
@@ -52,9 +48,8 @@ h1 {
   width: 80%;
   height: 80%;
   border-radius: 50%;
-  /* testing */
   z-index: -1;
-  left: 2px;
+  left: 1px;
   bottom: 0px;
 }
 .drop {
@@ -82,20 +77,17 @@ h1 {
 }
 .reset {
   animation: reset 0.5s ease forwards;
-  /* bottom: -100px */
 }
 @keyframes reset {
   0% {
     transform: translateY(0px);
   }
   50% {
-    /* transform: translateY(50px); */
     opacity: 0.5;
   }
   100% {
     opacity: 0;
     transform: translateY(100px);
-    /* transform: rotateX(70deg); */
   }
 }
 /* TODO: make pieces red/blue,  depending on player 1/2 piece */
@@ -133,4 +125,40 @@ h1 {
   to {
     transform: rotateY(360deg);
   }
+}
+.row5 td {
+  border: solid 12px #251a9b;
+}
+.row5 .roundDiv {
+  border: solid 12px #251a9b;
+}
+.row4 td {
+  border: solid 12px #2a2696;
+}
+.row4 .roundDiv {
+  border: solid 12px #2a2696;
+}
+.row3 td {
+  border: solid 12px #3437a4;
+}
+.row3 .roundDiv {
+  border: solid 12px #3437a4;
+}
+.row2 td {
+  border: solid 12px #3d47b3;
+}
+.row2 .roundDiv {
+  border: solid 12px #3d47b3;
+}
+.row1 td {
+  border: solid 12px #4758c1;
+}
+.row1 .roundDiv {
+  border: solid 12px #4758c1;
+}
+.row0 td {
+  border: solid 12px #5168d0;
+}
+.row0 .roundDiv {
+  border: solid 12px #5168d0;
 }
